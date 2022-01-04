@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 function TestForm(submitForm) {
   const classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'];
   const races = ['Dwarf', 'Elf', 'Halfling', 'Human', 'Dragonborn', 'Gnome', 'Half-Elf', 'Half-Orc', 'Tiefling'];
-  return(
+  return (
           <Form>
             <Form.Group controlId="characterName">
               <Form.Label className='formLabel'>Character Name:</Form.Label>

@@ -2,7 +2,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import TestForm from '../components/testForm';
 import styles from '../styles/Home.module.css';
+import formOneOnSubmit from '../components/FormOneSubmit';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 export default function Home() {
+
+  const {name, raceData, classData} = formOneOnSubmit();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +24,7 @@ export default function Home() {
           <h3>Our Vision</h3>
           <p>
             This is the main text of the page which will describe to the user the things they can do. It is very important that this text be clear and concise as well as delivered in a way that is visually cohesive with the rest of the presentation, as this will be the user's first impression of the product. 
-          </p>       
+          </p>
         </article>
         <section>
           <h3>Get Started!</h3>
