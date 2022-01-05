@@ -2,13 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import TestForm from '../components/testForm';
 import styles from '../styles/Home.module.css';
-import formOneOnSubmit from '../components/FormOneSubmit';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Home() {
-
-  const {name, raceData, classData} = formOneOnSubmit();
 
   return (
     <div className={styles.container}>

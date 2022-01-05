@@ -1,24 +1,23 @@
 import axios from "axios";
 import { useState } from "react";
 
-formOneOnSubmit = async (e) => {
-
-    const [name, setName] = useState('');
-    const [raceData, setRaceData] = useState({});
-    const [classData, setClassData] = useState({});
+// Handles the user input for character name, race, and class. Two querys to backend 
+formOneOnSubmit = async (e, name, race, charClass, description) => {
 
     e.preventDefault();
-    let characterName = e.target.CharacterName.value;
+    let charName = e.target.CharacterName.value;
     let chosenRace = e.target.characterRace.value;
     let chosenClass = e.target.characterClass.value;
-    let description = e.target.characterDescription.value;
+    let charDescription = e.target.characterDescription.value;
 
-    setName(characterName);
-    setRaceData(axios.get(`${process.env.PORT}/race?race=${chosenRace}`));
-    setClassData(axios.get(`${proccess.env.PORT}/class?charClass=${chosenClass}`));
+    let raceData = axios.get(`${process.env.PORT}/race?race=${chosenRace}`);
+    let classData = axios.get(`${proccess.env.PORT}/class?charClass=${chosenClass}`);
 
-    return {name, raceData, classData};
-  } 
+    name = charName;
+    race = raceData;
+    charClass = classData;
+    description = charDescription;
+} 
 
   export default formOneOnSubmit;
   
