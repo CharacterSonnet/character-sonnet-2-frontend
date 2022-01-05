@@ -1,10 +1,21 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 function TestForm(submitForm) {
+
+  // Character creation and Form States 
+  const [charName, setCharName] = useState('');
+  const [raceData, setRaceData] = useState({});
+  const [classData, setClassData] = useState({});
+  const [description, setDescription] = useState('');
+  const [characterForm, setCharacterForm] = useState(true);
+  const [skillsAttributesForm, setSkillsAttributesForm] = useState(false);
+  const [equipmentForm, setEquipmentForm] = useState(false);
+
   const classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'];
   const races = ['Dwarf', 'Elf', 'Halfling', 'Human', 'Dragonborn', 'Gnome', 'Half-Elf', 'Half-Orc', 'Tiefling'];
-  return(
+  return (
           <Form>
             <Form.Group controlId="characterName">
               <Form.Label className='formLabel'>Character Name:</Form.Label>
